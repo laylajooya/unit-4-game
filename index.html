@@ -5,41 +5,53 @@
     <meta charset="utf-8">
     <title>CrystalCollectors Game</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="icon" type="image" href="assets/images/iconfinder_Nephrite_pyramid_127308.png">
 </head>
 
 <body>
-
     <header>
-        <h3>CrystalCollectors!</h3>
+        <h1>CrystalCollectors!</h1>
     </header>
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <img class="crystal-icons" src="assets/images/iconfinder_Emerald_127302.png">
-                <img src="assets/images/iconfinder_Nephrite_pyramid_127308.png">
-                <img src="assets/images/iconfinder_Quartz_crystal_127307.png">
-                <img src="assets/images/iconfinder_Zircon_127304.png">
-            </div>
-        </div>
-        <div class ="row">
-            <div class="col">
-                Random number:
-            </div>
-            <div class="col">
-                Total score:
-            </div>
-            <div class="col">
-                Wins:
-                Losses:
-            </div>
-        </div>
+    <div class="instructions"></div>
+
+    <div id="crystals">
+        <img class="crystal-icon" id="crystal1" src="assets/images/iconfinder_Emerald_127302.png">
+        <img class="crystal-icon" id="crystal2" src="assets/images/iconfinder_Nephrite_pyramid_127308.png">
+        <img class="crystal-icon" id="crystal3" src="assets/images/iconfinder_Quartz_crystal_127307.png">
+        <img class="crystal-icon" id="crystal4" src="assets/images/iconfinder_Zircon_127304.png">
+    </div>
+
+    <div class="randomNumber">
+        <h1>Number to get: 
+        <span id="random-number"></span>
+        </h1>
+    </div>
+
+    <div class="winsLosses">
+        <h1>Wins: 
+        <span id="wins"></span>
+        <br>
+        Losses: 
+        <span id="losses"></span>
+        </h1>
+    </div>
+
+    <div class="counter">
+        <h1> Total: 
+        <span id="total"></span>
+        </h1>
+    </div>
+
+    <div class="gameAlert">
+        <h1>
+            <span id="gameAlert-text"></span>
+        </h1>
     </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
-</html>
+</html
