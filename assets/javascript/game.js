@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   // Selects random number between 19 and 120
   
-  var randomNumber = Math.floor(Math.random() * (101 + 1) + 19);
+  var randomNumber = Math.floor(Math.random() * 102) + 19;
 
   // Inserts number to html
 
@@ -10,75 +10,79 @@ $(document).ready(function(){
 
   // Selects random number for each crystal between 1 and 12
   
-  var num1 = Math.floor(Math.random() * 11 + 1)
-  var num2 = Math.floor(Math.random() * 11 + 1)
-  var num3 = Math.floor(Math.random() * 11 + 1)
-  var num4 = Math.floor(Math.random() * 11 + 1)
+  var num1 = Math.floor(Math.random() * 12) + 1;
+  var num2 = Math.floor(Math.random() * 12) + 1;
+  var num3 = Math.floor(Math.random() * 12) + 1;
+  var num4 = Math.floor(Math.random() * 12) + 1;
 
   var counter = 0;
   var wins = 0;
   var losses = 0;
+  
 
-
-
-  // $("#wins").text(wins);
-  // $("#losses").text(losses);
+  function reset() {
+    randomNumber = Math.floor(Math.random() * 102) + 19;
+    $("#random-number").text(randomNumber);
+    num1 = Math.floor(Math.random() * 12) + 1;
+    num2 = Math.floor(Math.random() * 12) + 1;
+    num3 = Math.floor(Math.random() * 12) + 1;
+    num4 = Math.floor(Math.random() * 12) + 1;
+    counter = 0;
+    $("#total").text(counter);
+  }
 
   function win() {
+    $("#gameAlert-text").text("You win!");
     wins++;
     $("#wins").text(wins);
+    reset ();
   }
 
   function lose() {
+    $("#gameAlert-text").text("You lose!");
     losses++;
     $("#losses").text(losses);
-    
+    reset ();
   }
 
-  $("#crystal1").click(function() {
-    counter = counter + num1;
-    $("#total").text(counter);
+  function num(myNumber) {
+    if (myNumber == 1) {
+      return num1;
+    } else if (myNumber == 2) {
+      return num2;
+    } else if (myNumber == 3) {
+      return num3;
+    } else if (myNumber == 4) {
+      return num4;
+    }
+  }
+
+  // write dry function here
+  for (var i = 1; i < 5; i++) {
+    console.log("#crystal" + i)
+
+    $("#crystal" + i).click(function() {
+      // so we can clear the game alert text in here, how would we do that
+      $("#gameAlert-text").text("");
+
+      // boooooooom i think your game is ready for primetime 
+
+      // retrieving the number from the elements id that was clicked
+      myNumber = this.id.match(/\d+$/)[0];
+      myNumber = parseInt(myNumber);
+
+      // using the num() function to return the correct num[i] variable
+      counter = counter + num(myNumber);
+      $("#total").text(counter);
+      
       if (counter == randomNumber) {
         win();
       } 
       else if (counter > randomNumber) {
         lose();
       }
-  })
-
-  $("#crystal2").click(function() {
-    counter = counter + num2;
-    $("#total").text(counter);
-      if (counter == randomNumber) {
-        win();
-      } 
-      else if (counter > randomNumber) {
-        lose();
-      }
-  })
-
-  $("#crystal3").click(function() {
-    counter = counter + num3;
-    $("#total").text(counter);
-      if (counter == randomNumber) {
-        win();
-      }
-      else if (counter > randomNumber) {
-        lose();
-      }
-  })
-
-  $("#crystal4").click(function() {
-    counter = counter + num4;
-    $("#total").text(counter);
-      if (counter == randomNumber) {
-        win();
-      } 
-      else if (counter > randomNumber) {
-        lose();
-      }
-  })
-
+    })
+  }
 });
 
   // for (var i = 0; i < numberOptions.length; i++) {
@@ -127,3 +131,21 @@ $(document).ready(function(){
 
 // for (var i = 0; i < 4; i++) {
 // numberOptions[i] = Math.floor((Math.random()*12)+1);
+
+// var crystal1 = Math.floor(Math.random() * 12) + 1;
+// $("#img1").html("<img src=" + "assets/images/ iconfinder_Emerald_127302.png" + " data-crystalvalue=" + crystal1 + ">")
+
+// var crystal2 = Math.floor(Math.random() * 12) + 1;
+// $("#img2").html("<img src=" + "assets/images/ iconfinder_Nephrite_pyramid_127308" + " data-crystalvalue=" + crystal2 + ">")
+
+// var crystal3 = Math.floor(Math.random() * 12) + 1;
+// $("#img3").html("<img src=" + "assets/images/ iconfinder_Quartz_crystal_127307" + " data-crystalvalue=" + crystal3 + ">")
+
+// var crystal4 = Math.floor(Math.random() * 12) + 1;
+// $("#img4").html("<img src=" + "assets/images/ iconfinder_Zircon_127304.png" + " data-crystalvalue=" + crystal4 + ">")
+
+// $("img").click(function() {
+//   var crystalValue = ($(this).attr("data-crystalvalue"));
+//   //   crystalValue = parseInt(crystalValue);
+
+//   //   counter += crystalValue;
