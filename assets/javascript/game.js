@@ -15,10 +15,14 @@ $(document).ready(function(){
   var num3 = Math.floor(Math.random() * 12) + 1;
   var num4 = Math.floor(Math.random() * 12) + 1;
 
+  // Assign 0 value to vars
+
   var counter = 0;
   var wins = 0;
   var losses = 0;
   
+
+  // Function to reset game
 
   function reset() {
     randomNumber = Math.floor(Math.random() * 102) + 19;
@@ -30,6 +34,8 @@ $(document).ready(function(){
     counter = 0;
     $("#total").text(counter);
   }
+
+  // Win and lose function
 
   function win() {
     $("#gameAlert-text").text("You win!");
@@ -45,6 +51,8 @@ $(document).ready(function(){
     reset ();
   }
 
+  // Number that elements id was clicked on returning num between 1 and 12
+  
   function num(myNumber) {
     if (myNumber == 1) {
       return num1;
@@ -65,8 +73,6 @@ $(document).ready(function(){
       // so we can clear the game alert text in here, how would we do that
       $("#gameAlert-text").text("");
 
-      // boooooooom i think your game is ready for primetime 
-
       // retrieving the number from the elements id that was clicked
       myNumber = this.id.match(/\d+$/)[0];
       myNumber = parseInt(myNumber);
@@ -84,68 +90,3 @@ $(document).ready(function(){
     })
   }
 });
-
-  // for (var i = 0; i < numberOptions.length; i++) {
-
-  //   var iconCrystal = $("<img>");
-
-  //   iconCrystal.addClass("crystal-icon");
-  
-  //     // Each imageCrystal will be given a src link to the crystal image
-  //   iconCrystal.attr("src", "assets/images/iconfinder_Quartz_crystal_127307.png");
-  
-  //     // Each imageCrystal will be given a data attribute called data-crystalValue.
-  //     // This data attribute will be set equal to the array value.
-  //   iconCrystal.attr("data-crystalvalue", numberOptions[i]);
-  
-  //     // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-  //   $("#crystals").append(iconCrystal);
-  //   }
-
-//   $("#crystal1").attr("data-crystalvalue", Math.random())
-//   $("#crystal2").attr("data-crystalvalue", Math.random())
-//   $("#crystal3").attr("data-crystalvalue", Math.random())
-//   $("#crystal4").attr("data-crystalvalue", Math.random())
-
-
-
-  // // Here we created an on-click event that responds to button clicks of the crystal image.
-  // $(".crystal-icon").on("click", function() {
-    
-  //   var crystalValue = ($(this).attr("data-crystalvalue"));
-  //   crystalValue = parseInt(crystalValue);
-
-  //   counter += crystalValue;
-
-  //   // Clicking the button triggers an alert message.
-  //   alert("Your new score is " + counter);
-
-  //   if (counter === randomNumber) {
-  //       alert("You win!");
-  //   }
-  //   else if (counter >= randomNumber) {
-  //       alert("You lose!");
-  //   }
-
-  // });
-
-// for (var i = 0; i < 4; i++) {
-// numberOptions[i] = Math.floor((Math.random()*12)+1);
-
-// var crystal1 = Math.floor(Math.random() * 12) + 1;
-// $("#img1").html("<img src=" + "assets/images/ iconfinder_Emerald_127302.png" + " data-crystalvalue=" + crystal1 + ">")
-
-// var crystal2 = Math.floor(Math.random() * 12) + 1;
-// $("#img2").html("<img src=" + "assets/images/ iconfinder_Nephrite_pyramid_127308" + " data-crystalvalue=" + crystal2 + ">")
-
-// var crystal3 = Math.floor(Math.random() * 12) + 1;
-// $("#img3").html("<img src=" + "assets/images/ iconfinder_Quartz_crystal_127307" + " data-crystalvalue=" + crystal3 + ">")
-
-// var crystal4 = Math.floor(Math.random() * 12) + 1;
-// $("#img4").html("<img src=" + "assets/images/ iconfinder_Zircon_127304.png" + " data-crystalvalue=" + crystal4 + ">")
-
-// $("img").click(function() {
-//   var crystalValue = ($(this).attr("data-crystalvalue"));
-//   //   crystalValue = parseInt(crystalValue);
-
-//   //   counter += crystalValue;
