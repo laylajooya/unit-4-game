@@ -1,0 +1,27 @@
+body {
+    margin: 0 auto;
+    background-color: lightpink;
+    font-family: monospace;
+    text-align: center;
+
+}
+
+
+.randomNumber {
+    font-size: 60px;
+}
+
+.counter {
+    font-size: 25px;
+}
+
+h1 {
+    padding: 20px;
+    font-size: 20px;
+}
+
+div {
+    padding: 20px;
+}
+
+

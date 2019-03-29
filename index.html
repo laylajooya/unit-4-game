@@ -1,0 +1,59 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CrystalCollectors Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="icon" type="image" href="assets/images/iconfinder_Nephrite_pyramid_127308.png">
+</head>
+
+<body>
+    <header>
+        <h1>CrystalCollectors!</h1>
+    </header>
+
+    <div class="instructions">
+        <p>Try to get the random number below by clicking the crystal icons. Each crystal holds a random value.</p>
+    </div>
+
+    <div id="crystals">
+        <img class="crystal-icon" id="crystal1" src="assets/images/iconfinder_Emerald_127302.png">
+        <img class="crystal-icon" id="crystal2" src="assets/images/iconfinder_Nephrite_pyramid_127308.png">
+        <img class="crystal-icon" id="crystal3" src="assets/images/iconfinder_Quartz_crystal_127307.png">
+        <img class="crystal-icon" id="crystal4" src="assets/images/iconfinder_Zircon_127304.png">
+    </div>
+
+    <div class="randomNumber">
+        <span id="random-number"></span>
+        
+    </div>
+
+    <div class="winsLosses">
+        <h1>Wins: 
+        <span id="wins"></span><br>
+        <br>
+        Losses: 
+        <span id="losses"></span>
+        </h1>
+    </div>
+
+    <div class="counter">
+        Your number: 
+        <span id="total"></span>
+        
+    </div>
+
+
+    <div class="gameAlert">
+        <h1>
+            <span id="gameAlert-text"></span>
+        </h1>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+</html
